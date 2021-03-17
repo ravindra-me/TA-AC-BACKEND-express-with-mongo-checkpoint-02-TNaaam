@@ -1,0 +1,44 @@
+.details-hero{
+    article{
+        p{
+            margin: 1rem 0;
+        }
+    }
+    .like{
+        font-size: 1.25rem;
+    }
+}
+
+.comment-sec{
+    form{
+        width: 50%;
+        margin-top: 1rem;
+        .btn{
+            margin-top: 0;
+        }
+    }
+}
+
+.comment-content{
+    margin-top: 2rem;
+    .comment-card{
+        background: rgba($color: blue, $alpha: 0.1);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-top-left-radius: 2rem;
+        border-bottom-right-radius: 1rem;
+        box-shadow: 0 0.5rem 0.5rem rgba($color: black, $alpha: 0.5);
+        .btn{
+            margin: 0;
+        }
+        h4{
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        h3{
+            margin-top: 1rem;
+        }
+    }
+}
+
+

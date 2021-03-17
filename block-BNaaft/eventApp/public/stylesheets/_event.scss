@@ -1,0 +1,77 @@
+.events{
+    background-color: whitesmoke;
+    .container{
+        gap:2rem
+    }
+    aside{
+        background: rgb(42,41,62);
+        border-radius: 0.25rem;
+        padding: 1rem;
+        h3{
+            color: white;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-weight: 800;
+            border-bottom: 2px solid white;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+        li{
+            margin-bottom: 1rem;
+        }
+        a{
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+    }
+    .event-content{
+        .header{
+            box-shadow: 0 2px 20px rgba($color: #000000, $alpha: 0.5);
+            padding: 1rem;
+            border-bottom-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            .btn{
+                margin: 0;
+                font-size: 1.125rem;
+                padding: 0.8rem 1.25rem;
+            }
+            .sort{
+                font-size: 1.25rem;
+                border: 0.125rem solid black;
+                padding: 0.25rem;
+                font-weight: 600;
+                border-radius: 0.25rem;
+            }
+        }
+        .main-events-sec{
+            margin-top: 3rem;
+            gap: 2rem;
+            .card{
+                padding: 1rem;
+                border-radius: 0.4rem;
+                box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.5);
+                h3{
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                }
+                p{
+                    margin: 1rem 0;
+                }
+                a{
+                    color: blue;
+                }
+            }
+        }
+        input{
+            padding: 0.8rem 2rem;
+            border-radius: 0.25rem;
+            border: none;
+            font-size: 1.25rem;
+            outline: none;
+            border: 1px solid black;
+            margin-right: 0.5rem;
+        }
+    }
+}

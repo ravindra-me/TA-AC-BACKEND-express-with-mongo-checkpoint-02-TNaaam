@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event App</title>
+    <script
+      src="https://kit.fontawesome.com/379acff5c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between-flex align-center">
+        <a href="/" class="logo">Event House</a>
+        <nav>
+          <ul class="flex">
+            <li><a href="/events/home">Home</a></li>
+            <li><a href="/events/about">About</a></li>
+            <li><a href="/events/new">Add Event</a></li>
+            <li><a href="/events">Event List</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="edit-comment-hero padding">
+          <article class="container grid grid-template-col-2 gap align-center">
+              <div class="font-0">
+                  <img src="https://media.flaticon.com/dist/assets/computer.e5a68dc204005f3ecb76f91ff9549b19.svg" alt="" class="img">
+              </div>
+              <div>
+                  <h2 class="secondary-heading text-center">Edit comment</h2>
+                  <form action="/remarks/<%=data._id%>/commentedit" method="POST">
+                    <label for="title">title</label>
+                    <input type="text" name="title" id="title" placeholder="enter the comment" class="form-control" value="<%= data.title %>">
+                    <label for="name">name</label>
+                    <input type="text" name="name" id="name" placeholder="enter the name" class="form-control" value="<%= data.name %>">
+                    <button type="submit" class="btn">add comment</button>
+                </form>
+              </div>
+          </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <section class="contact padding">
+        <div class="container flex align-center">
+          <div class="flex-20 font-0">
+            <a href="#" class="footer-logo"> Event House </a>
+          </div>
+          <div class="flex-40">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="flex">
+              <li><a href="/events/home">Home</a></li>
+              <li><a href="/events">Program List</a></li>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="flex-30 flex-100">
+            <div><h3 class="footer-heading">Follow Us</h3></div>
+            <div>
+              <a href="https://twitter.com/home" class="icon"
+                ><i class="fab fa-facebook-square"></i
+              ></a>
+              <a href="https://www.facebook.com/" class="icon"
+                ><i class="fab fa-twitter-square"></i
+              ></a>
+              <a href="https://github.com/ravindra-me" class="icon"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="copy-right">
+        <small>&copy;AltCampus Services Pvt Ltd, 2018-present</small>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/379acff5c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Event App</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between-flex align-center">
+        <a href="/" class="logo">Event House</a>
+        <nav>
+          <ul class="flex">
+            <li><a href="/events/home">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="/events/new">Add Event</a></li>
+            <li><a href="/events">Event List</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="events padding">
+        <div class="container grid grid-template-col-4">
+          <aside class="">
+            <h3>Filter By category</h3>
+            <ul>
+                <%categoryes.forEach(elem => { %>
+                    <li>  <a href="/events/<%= elem %>/category"><%= elem%></a></li>
+                <%})%>
+                <li><a href="/events">all category</a></li>
+            </ul>
+
+          </aside>
+          <div class="grid-span-3 event-content">
+            <div class="header flex justify-between-flex align-center">
+              <a href="/events/sortdate" class="sort">Sort By Date</a>
+              <form action="/events/location" method="POST">
+                <input
+                  type="text"
+                  name="location"
+                  placeholder="search by location"
+                />
+                <button class="btn">search</button>
+              </form>
+            </div>
+            <div class="main-events-sec grid grid-template-col-2">
+              <% data.forEach(element=> { %>
+                <div class="card">
+                    <h3><%= element.title%> </h3>
+                    <p><%= element.summary.substr(0, 30)%> ....</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <%= element.location %></p>
+                    <p>starting date is <%=public.dateFormate(element.start_date)%></p>
+                    <a href="/events/<%= element._id%>">show more</a>
+                </div>
+              <%}) %>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <section class="contact padding">
+        <div class="container flex align-center">
+          <div class="flex-20 font-0">
+            <a href="#" class="footer-logo"> Event House </a>
+          </div>
+          <div class="flex-40">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="flex">
+              <li><a href="#schedule-sec">Program</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact-sec">Contact Us</a></li>
+              <li><a href="#info">Services</a></li>
+            </ul>
+          </div>
+          <div class="flex-30 flex-100">
+            <div><h3 class="footer-heading">Follow Us</h3></div>
+            <div>
+              <a href="https://twitter.com/home" class="icon"
+                ><i class="fab fa-facebook-square"></i
+              ></a>
+              <a href="https://www.facebook.com/" class="icon"
+                ><i class="fab fa-twitter-square"></i
+              ></a>
+              <a href="https://github.com/ravindra-me" class="icon"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="copy-right">
+        <small>&copy;AltCampus Services Pvt Ltd, 2018-present</small>
+      </div>
+    </footer>
+  </body>
+</html>

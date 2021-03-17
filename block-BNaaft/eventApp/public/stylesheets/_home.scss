@@ -1,0 +1,26 @@
+.hero{
+    background-color: rgba(235,235,235, 1);
+    color: white;
+    height: 90vh;
+    img{
+        color: white;
+    }
+    h1{
+        color: black;
+        text-transform: capitalize;
+        margin-bottom: 2rem;
+        text-shadow: 0 0.25rem 0.25rem rgba($color: black,$alpha: 0.5);
+    }
+
+    p{
+        color: black;
+        font-weight: 600;
+    }
+    
+}
+
+.about-sec{
+    h2{
+        margin-bottom: 1rem;
+    }
+}
