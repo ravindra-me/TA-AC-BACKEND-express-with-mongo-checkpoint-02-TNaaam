@@ -1,0 +1,18 @@
+.about-sec-hero{
+    background:linear-gradient(rgba(black, 0.5), rgba(black,0.5)), url('https://images.unsplash.com/photo-1542435503-956c469947f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80') no-repeat center;
+    background-size: cover;
+    .container{
+        height: 50vh;
+        color: white;
+    }
+}
+
+.about-content{
+    padding: 2rem 0;
+    .ternary-heading{
+        margin-bottom: 5rem;
+    }
+    p{
+        line-height: 1.5;
+    }
+}
