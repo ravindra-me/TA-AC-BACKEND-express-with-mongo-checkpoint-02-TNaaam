@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/379acff5c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Event App</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between-flex align-center">
+        <a href="/" class="logo">Event House</a>
+        <nav>
+          <ul class="flex">
+            <li><a href="/events/home">Home</a></li>
+            <li><a href="/events/about">About</a></li>
+            <li><a href="/events/new">Add Event</a></li>
+            <li><a href="/events">Event List</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="padding details-hero">
+          <div class="container">
+              <article>
+                  <h2 class="secondary-heading">
+                      <%= data.title %>
+                  </h2>
+                  <p><%= data.summary %></p>
+                  <div>
+                      <h3 class="ternary-heading">
+                          Host Name
+                      </h3>
+                      <p><%= data.host %></p>
+                  </div>
+                  <div>
+                      <h3 class="ternary-heading">Starting date of event</h3>
+                      <p><%=public.dateFormate( data.start_date)%></p>
+                  </div>
+                  <div>
+                    <h3 class="ternary-heading">End date of event</h3>
+                    <p><%= public.dateFormate(data.end_date)%></p>
+                </div>
+                <div>
+                    <h3 class="ternary-heading">
+                        Categoryes
+                    </h3>
+                    <% data.category.forEach(elem=> { %>
+                        <p><%= elem%></p>
+                   <% }) %>
+                </div>
+                <div>
+                    <h3 class="ternary-heading">Likes</h3>
+                    <p><%= data.likes %></p>
+                    <a href="/events/<%= data._id%>/like" class="like"><i class="far fa-thumbs-up"></i></a>
+                </div>
+              </article>
+              <a href="/events/<%= data._id %>/edit" class="btn">edit</a>
+              <a href="/events/<%= data._id %>/delete" class="btn">Delete</a> 
+          </div>
+      </section>
+      <section class="padding comment-sec"> 
+          <div class="container">
+              <h2 class="secondary-heading">comments</h2>
+            <form action="/events/<%=data._id%>/comments" method="POST">
+                <input type="text" name="title" placeholder="enter the comment" class="form-control">
+                <input type="text" name="name" placeholder="enter the name" class="form-control">
+                <button type="submit" class="btn">add comment</button>
+            </form>
+            <div class="comment-content">
+                <% data.remarks.forEach(element=> { %>
+                    <div class="comment-card flex justify-between-flex align-center">
+                        <div class="">
+                            <h4><%= element.name%></h4>
+                            <p><%= element.title %></p>
+                            <div>
+                                <h3 class="ternary-heading">Likes</h3>
+                                <p><%= element.likes ? element.likes : 0%></p>
+                                <a href="/remarks/<%= element._id%>/commentlike"><i class="far fa-thumbs-up"></i></a>
+                            </div>
+                        </div>
+                      <div>
+                          <a href="/remarks/<%= element._id%>/commentedit" class="btn">edit</a>
+                          <a href="/remarks/<%= element._id%>/commentdelete" class="btn">Delete</a>
+                      </div>
+                    </div>
+                <%})%>
+            </div>
+          </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <section class="contact padding">
+        <div class="container flex align-center">
+          <div class="flex-20 font-0">
+            <a href="#" class="footer-logo"> Event House </a>
+          </div>
+          <div class="flex-40">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="flex">
+              <li><a href="#schedule-sec">Program</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact-sec">Contact Us</a></li>
+              <li><a href="#info">Services</a></li>
+            </ul>
+          </div>
+          <div class="flex-30 flex-100">
+            <div><h3 class="footer-heading">Follow Us</h3></div>
+            <div>
+              <a href="https://twitter.com/home" class="icon"
+                ><i class="fab fa-facebook-square"></i
+              ></a>
+              <a href="https://www.facebook.com/" class="icon"
+                ><i class="fab fa-twitter-square"></i
+              ></a>
+              <a href="https://github.com/ravindra-me" class="icon"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="copy-right">
+        <small>&copy;AltCampus Services Pvt Ltd, 2018-present</small>
+      </div>
+    </footer>
+  </body>
+</html>
